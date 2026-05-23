@@ -1,5 +1,8 @@
 package br.com.souza_anacarolina.buscacep.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Adress {
 
     String cep;
@@ -34,6 +37,20 @@ public class Adress {
     public void setLogradouro(String logradouro) {
         this.logradouro = logradouro;
     }
+
+    public void setListaEnderecos(List<Adress> listaEnderecos) {
+        this.listaEnderecos = listaEnderecos;
+    }
+
+    public void getListaEnderecos(){
+        System.out.println("\n--- Endereços Consultados ---");
+        for (Adress adress : listaEnderecos) {
+            System.out.println("CEP: " + adress.getCep() + " | " + adress.getLogradouro() + ", " + adress.getBairro());
+        }
+        System.out.println("-----------------------------\n");
+    }
+
+    List<Adress> listaEnderecos = new ArrayList<>();
 
 
 }

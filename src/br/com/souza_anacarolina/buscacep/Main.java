@@ -7,6 +7,7 @@ import br.com.souza_anacarolina.buscacep.model.Adress;
 import br.com.souza_anacarolina.buscacep.service.ApiConnection;
 import br.com.souza_anacarolina.buscacep.service.Write;
 import com.google.gson.Gson;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -62,19 +63,19 @@ public class Main {
                         }
                     } else if (opcao == 2) {
                         Write write = new Write();
-                        write.consultaEndereco();
+                        write.consultaEndereco(listaEnderecos);
                         System.out.println("Oque deseja fazer agora?\n" + listaopcoes);
                         opcao = scanner.nextInt();
                         scanner.nextLine();
                     } else if (opcao == 3) {
                         Write write = new Write();
-                        write.arquivoJson();
+                        write.arquivoJson(listaEnderecos);
                         System.out.println("Oque deseja fazer agora?\n" + listaopcoes);
                         opcao = scanner.nextInt();
                         scanner.nextLine();
                     } else if (opcao == 4) {
                         Write write = new Write();
-                        write.arquivoTxt();
+                        write.arquivoTxt(listaEnderecos);
                         System.out.println("Oque deseja fazer agora?\n" + listaopcoes);
                         opcao = scanner.nextInt();
                         scanner.nextLine();

@@ -6,13 +6,12 @@ import com.google.gson.GsonBuilder;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Write extends Adress {
-    List<Adress> listaEnderecos = new ArrayList<>();
 
-    public void arquivoJson() throws IOException {
+
+    public void arquivoJson(List<Adress> listaEnderecos) throws IOException {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         FileWriter escrita = new FileWriter("enderecos.json");
         String jsonFormatado = gson.toJson(listaEnderecos);
@@ -22,7 +21,7 @@ public class Write extends Adress {
         System.out.println("Arquivo 'enderecos.json' gerado com sucesso!.\n");
     }
 
-    public void arquivoTxt() throws IOException {
+    public void arquivoTxt(List<Adress> listaEnderecos) throws IOException {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         FileWriter escrita = new FileWriter("enderecos.txt");
         String jsonFormatado = gson.toJson(listaEnderecos);
@@ -32,11 +31,15 @@ public class Write extends Adress {
         System.out.println("Arquivo 'enderecos.json' gerado com sucesso!.\n");
     }
 
-    public void consultaEndereco(){
-        System.out.println("\n--- Endereços Consultados ---");
-        for (Adress adress : listaEnderecos) {
-            System.out.println("CEP: " + adress.getCep() + " | " + adress.getLogradouro() + ", " + adress.getBairro());
+    public void consultaEndereco(List<Adress> listaEnderecos) {
+        if (listaEnderecos.isEmpty()) {
+            System.out.println("\nAVISO: Nenhum endereço para exibir.");
+        } else {
+            System.out.println("\n--- Endereços Consultados ---");
+            for (Adress adress : listaEnderecos) {
+                System.out.println("CEP: " + adress.getCep() + " | " + adress.getLogradouro() + ", " + adress.getBairro());
+            }
+            System.out.println("-----------------------------\n");
         }
-        System.out.println("-----------------------------\n");
     }
 }
