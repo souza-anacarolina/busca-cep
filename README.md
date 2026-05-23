@@ -1,4 +1,4 @@
-# 🔍 Busca CEP - Gerador de JSON
+# 🔍 Busca CEP - Gerador de JSON/TXT
 
 Um projeto pessoal em Java desenvolvido para buscar endereços a partir de um CEP informado pelo usuário, utilizando a API pública do ViaCEP e gerando um arquivo estruturado em formato JSON com o histórico das buscas.
 
