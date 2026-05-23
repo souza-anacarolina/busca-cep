@@ -18,14 +18,14 @@ public class ApiConnection {
     }
 
     public void setCep(String cep) {
-                this.cep = cep;
+        this.cep = cep;
     }
 
     public int getStatus() {
         return status;
     }
 
-    public String buscaEndereco() {
+    public String buscaEnderecoJson() {
 
         String URL = "https://viacep.com.br/ws/" + this.cep + "/json/";
 
@@ -37,12 +37,10 @@ public class ApiConnection {
         try {
             HttpResponse<String> response = client
                     .send(request, HttpResponse.BodyHandlers.ofString());
-           status = response.statusCode();
-           return response.body();
+            status = response.statusCode();
+            return response.body();
         } catch (IOException | InterruptedException e) {
             throw new ConnectionError("Não consegui conectar com o servidor do ViaCEP: " + e.getMessage());
         }
     }
-
-
 }

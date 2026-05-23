@@ -40,7 +40,7 @@ public class Main {
                         if (cep.length() == 8) {
                             ApiConnection apiConnection = new ApiConnection();
                             apiConnection.setCep(cep);
-                            String jsonResultado = apiConnection.buscaEndereco();
+                            String jsonResultado = apiConnection.buscaEnderecoJson();
                             if (apiConnection.getStatus() == 200) {
                                 Gson gson = new Gson();
                                 Adress adress = gson.fromJson(jsonResultado, Adress.class);

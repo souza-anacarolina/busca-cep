@@ -3,7 +3,6 @@ package br.com.souza_anacarolina.buscacep.service;
 import br.com.souza_anacarolina.buscacep.model.Adress;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
@@ -28,6 +27,7 @@ public class Write extends Adress {
         escrita.close();
         System.out.println("Arquivo 'enderecos.json' gerado com sucesso!.\n");
     }
+
 
     public void consultaEndereco(List<Adress> listaEnderecos) {
         if (listaEnderecos.isEmpty()) {
