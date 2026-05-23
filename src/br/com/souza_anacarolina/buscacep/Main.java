@@ -42,7 +42,6 @@ public class Main {
                             apiConnection.setCep(cep);
                             String jsonResultado = apiConnection.buscaEndereco();
                             if (apiConnection.getStatus() == 200) {
-
                                 Gson gson = new Gson();
                                 Adress adress = gson.fromJson(jsonResultado, Adress.class);
 
@@ -86,10 +85,8 @@ public class Main {
                     opcao = scanner.nextInt();
                 }
             }
-        } catch (InputMismatchException e) {
+        } catch (InputMismatchException | IOException e) {
             throw new InvalidOption("Erro: Deve ser informado uma opção válida para prosseguir ");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
         }
     }
 }

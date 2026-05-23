@@ -16,7 +16,6 @@ public class Write extends Adress {
         FileWriter escrita = new FileWriter("enderecos.json");
         String jsonFormatado = gson.toJson(listaEnderecos);
         escrita.write(jsonFormatado);
-        escrita.flush();
         escrita.close();
         System.out.println("Arquivo 'enderecos.json' gerado com sucesso!.\n");
     }
@@ -26,7 +25,6 @@ public class Write extends Adress {
         FileWriter escrita = new FileWriter("enderecos.txt");
         String jsonFormatado = gson.toJson(listaEnderecos);
         escrita.write(jsonFormatado);
-        escrita.flush();
         escrita.close();
         System.out.println("Arquivo 'enderecos.json' gerado com sucesso!.\n");
     }
@@ -37,7 +35,8 @@ public class Write extends Adress {
         } else {
             System.out.println("\n--- Endereços Consultados ---");
             for (Adress adress : listaEnderecos) {
-                System.out.println("CEP: " + adress.getCep() + " | " + adress.getLogradouro() + ", " + adress.getBairro());
+                System.out.println("CEP: " + adress.getCep() + " | LOGRADOURO: " + adress.getLogradouro() + ", BAIRRO: " + adress.getBairro() + " | CIDADE: " + adress.getLocalidade() +
+                        " | ESTADO: " + adress.getEstado() + " - " + adress.getUf() + " | REGIÃO: " + adress.getRegiao());
             }
             System.out.println("-----------------------------\n");
         }

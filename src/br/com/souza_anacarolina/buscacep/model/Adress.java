@@ -1,12 +1,15 @@
 package br.com.souza_anacarolina.buscacep.model;
 
 
-
 public class Adress {
 
     String cep;
     String logradouro;
     String bairro;
+    String localidade;
+    String uf;
+    String estado;
+    String regiao;
     Boolean erro;
 
     public Boolean getErro() {
@@ -17,29 +20,27 @@ public class Adress {
         return cep;
     }
 
-    public void setCep(String cep) {
-        this.cep = cep;
-    }
-
     public String getBairro() {
         return bairro;
-    }
-
-    public void setBairro(String bairro) {
-        this.bairro = bairro;
     }
 
     public String getLogradouro() {
         return logradouro;
     }
 
-    public void setLogradouro(String logradouro) {
-        this.logradouro = logradouro;
+    public String getLocalidade() {
+        return localidade;
     }
 
+    public String getUf() {
+        return uf;
+    }
 
+    public String getEstado() {
+        return estado;
+    }
 
-
-
-
+    public String getRegiao() {
+        return regiao;
+    }
 }
